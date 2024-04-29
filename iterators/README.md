@@ -1,4 +1,4 @@
-# iterable이란?
+## Iterable이란?
 
 iterator 객체를 반환하는 Symbol.iterator 함수를 내부적으로 가지고 있는 경우, **반복이 가능한 객체**로서 iterable한 객체라고 말할 수 있습니다.
 
@@ -35,7 +35,7 @@ for (let n of iterable) {
 }
 ```
 
-# iterator란?
+## Iterator란?
 
 iterator 객체란 **반복이 가능한 객체**를 말하며 iterator protocol을 만족하는 경우에 iterator 객체라고 말할 수 있습니다.
 
@@ -66,5 +66,35 @@ object[Symbol.iterator] = function() {
 
 for(let each of object) {
     console.log(each); // { a: 1 }, { b: 2 }, { c: 2 } = { [key]: object[key] }
+}
+```
+
+## Generator란?
+
+generator는 iterable 객체이면서 iterator 객체이기도 합니다.
+
+이 말은 동시에 iterable protocol을 만족하면서 iterator protocol을 만족한다는 의미입니다.
+
+보통은 iterator 객체를 반환하는 함수를 가진 내부적으로 가진 객체를 iterable 객체라고 말하지만,
+
+generator function\* 함수를 통해 generator 함수를 생성하면 반복 처리와 순차적인 순회 작업이 가능합니다.
+
+```
+const createGenerator = function* () {
+  let count = 0;
+
+  while(count < 10) {
+    yield count++;
+  }
+}
+
+const generator = createGenerator();
+
+// iterator 객체이며 ..
+console.log(generator.next()); // { value: 0, done: false };
+
+// iterable 객체 ..
+for(let num of generator) {
+  console.log(num) // 1, 2, 3, 4, 5, 6, 7, 8, 9
 }
 ```
