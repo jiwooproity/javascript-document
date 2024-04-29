@@ -77,7 +77,7 @@ generator는 iterable 객체이면서 iterator 객체이기도 합니다.
 
 이 말은 동시에 iterable protocol을 만족하면서 iterator protocol을 만족한다는 의미입니다.
 
-보통은 iterator 객체를 반환하는 함수를 가진 내부적으로 가진 객체를 iterable 객체라고 말하지만,
+보통은 iterator 객체를 반환하는 함수를 내부적으로 가진 객체를 iterable 객체라고 말하지만,
 
 generator function\* 함수를 통해 generator 함수를 생성하면 반복 처리와 순차적인 순회 작업이 가능합니다.
 
