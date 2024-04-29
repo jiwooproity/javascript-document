@@ -41,7 +41,9 @@ iterator 객체란 **반복이 가능한 객체**를 말하며 iterator protocol
 
 iterator protocol에 만족하려면 next() 메서드를 통해 순차적으로 value와 done 프로퍼티를 반환하는 객체가 되어야 합니다.
 
-여기서 value는 순회를 통해 꺼내온 값들이 담겨 반환되고 done은 반복이 마루리 되었는 지를 나타내는 논리 값이 담깁니다.
+여기서 value는 순회를 통해 꺼내온 값들이 담겨 반환되고 done은 반복이 마무리 (종료) 되었는 지를 나타내는 논리 값이 담깁니다.
+
+반복이 종료되었다고 판단되면 done은 true가 되어 반복이 종료됩니다.
 
 포함하여 이러한 iterator 객체를 반환하는 Symbol.iterator 함수를 가진 객체를 iterable 객체라 할 수 있습니다.
 
