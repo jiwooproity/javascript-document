@@ -37,7 +37,7 @@ for (let n of iterable) {
 
 ## Iterator란?
 
-iterator 객체란 **반복이 가능한 객체**를 말하며 iterator protocol을 만족하는 경우에 iterator 객체라고 말할 수 있습니다.
+iterator 객체란 **순회하는 객체**를 말하며 iterator protocol을 만족하는 경우에 iterator 객체라고 말할 수 있습니다.
 
 iterator protocol에 만족하려면 next() 메서드를 통해 순차적으로 value와 done 프로퍼티를 반환하는 객체가 되어야 합니다.
 
